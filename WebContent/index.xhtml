@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+	<h:head> 
+		<title>Stock Exchange Online</title> 
+	</h:head>
+	<h:body>
+		<p:panel header="Buniness" footer="Stock-Exchange">
+			<h:form id="listBusiness"> 
+				<p:dataTable var="buniness" value="#{stockExchangeBean.business}" paginator="true" rows="15">
+					<p:column headerText="Price" > 
+						<h:outputText value="#{buniness.price}" /> 
+					</p:column>
+					<p:column headerText="Quantity">
+						<h:outputText value="#{buniness.quantity}" /> 
+					</p:column>
+					<p:column headerText="Volume"> 
+						<h:outputText value="#{buniness.volume}" /> 
+					</p:column>
+				</p:dataTable> 
+			</h:form>
+		</p:panel>
+	</h:body> 
+</html>
