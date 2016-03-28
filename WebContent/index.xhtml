@@ -15,7 +15,14 @@
 						<h:outputText value="#{buniness.quantity}" /> 
 					</p:column>
 					<p:column headerText="Volume"> 
-						<h:outputText value="#{buniness.volume}" /> 
+						<h:outputText value="#{buniness.volume}">
+					        <f:convertNumber type="number" groupingUsed="true" minFractionDigits="2" pattern="#00"/>
+					    </h:outputText>
+					</p:column>
+					<p:column headerText="Data"> 
+						<h:outputText value="#{buniness.date.time}" > 
+							<f:convertDateTime pattern="dd/MM/yyyy" /> 
+						</h:outputText>
 					</p:column>
 				</p:dataTable> 
 			</h:form>

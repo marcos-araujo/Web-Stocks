@@ -12,7 +12,8 @@ public class ReaderXML{
 	@SuppressWarnings("unchecked")
 	public List<Business> load(InputStream inputStream){
 		XStream stream = new XStream(new DomDriver());
-		stream.alias("business", Business.class);
+		stream.alias("negociacao", Business.class);
+		stream.autodetectAnnotations(true);
 		return (List<Business>) stream.fromXML(inputStream);
 	}
 

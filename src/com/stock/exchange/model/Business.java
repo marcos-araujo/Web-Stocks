@@ -3,10 +3,20 @@ package com.stock.exchange.model;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+
+@XStreamAlias("negociacao") 
 public class Business{
 	
+	@XStreamAlias("preco")
+	@XStreamAsAttribute  
 	private final BigDecimal price;
+	@XStreamAlias("quantidade")
+	@XStreamAsAttribute  
 	private final int amount;
+	@XStreamAlias("data")
+	@XStreamAsAttribute  
 	private final Calendar date;
 	
 	public Business(BigDecimal price, int amount, Calendar date){
