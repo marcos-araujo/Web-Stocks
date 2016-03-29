@@ -6,6 +6,7 @@
 	</h:head>
 	<h:body>
 		<p:panel header="Buniness" footer="Stock-Exchange">
+			<p:lineChart value="#{stockExchangeBean.graphicModel}" legendPosition="e" title="PETR4"/> 
 			<h:form id="listBusiness"> 
 				<p:dataTable var="buniness" value="#{stockExchangeBean.business}" paginator="true" rows="15">
 					<p:column headerText="Price" > 
