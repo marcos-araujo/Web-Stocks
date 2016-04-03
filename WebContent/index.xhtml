@@ -1,11 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" 
-		xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:f="http://java.sun.com/jsf/core" 
+		xmlns:h="http://java.sun.com/jsf/html" 
+		xmlns:p="http://primefaces.org/ui">
 	<h:head> 
 		<title>Stock Exchange Online</title> 
 	</h:head>
 	<h:body>
-		<p:panel header="Graphics' Data">
+		<p:panel header="Graphics Data">
 			<h:form id="graphicsData">
 				<p:growl/>
 				<h:panelGrid columns="2">
@@ -13,23 +15,23 @@
 					<p:inputText id="tittle" value="#{stockExchangeBean.tittle}" required="true">
 						<f:validateLength minimum="3" />
 					</p:inputText>
-					<p:outputLabel value="Indicador:" for="indicador" />
-						<p:selectOneMenu id="indicator" value="#{stockExchangeBean.indicator}">
+					<p:outputLabel value="Indicator:" for="indicator" />
+					<p:selectOneMenu id="indicator" value="#{stockExchangeBean.indicator}">
 						<f:selectItem itemValue="OpeningIndicator" itemLabel="Opening" />
 						<f:selectItem itemValue="ShutdownIndicator" itemLabel="Shutdown" />
 					</p:selectOneMenu>
 					<p:outputLabel value="Media:" for="media" />
-						<p:selectOneMenu id="media" value="#{stockExchangeBean.media}">
-							<f:selectItem itemValue="" itemLabel="Choose" />
-							<f:selectItem itemValue="SimpleMoving" itemLabel="Simple Moving" />
-							<f:selectItem itemValue="WeightedMoving" itemLabel="Weighted Moving" />
-						</p:selectOneMenu>
+					<p:selectOneMenu id="media" value="#{stockExchangeBean.media}">
+						<f:selectItem itemValue="" itemLabel="Choose" />
+						<f:selectItem itemValue="SimpleMovingAverage" itemLabel="Simple Moving" />
+						<f:selectItem itemValue="WeightedMovingAverage" itemLabel="Weighted Moving" />
+					</p:selectOneMenu>
 					<h:commandLink action="#{stockExchangeBean.prepareData}" value="Generate graphic" />
 				</h:panelGrid>
 			</h:form>
 		</p:panel>
-		<p:panel header="Buniness" footer="Stock-Exchange" rendered="#{argentumBean.modeloGrafico != null}">
-			<p:lineChart value="#{stockExchangeBean.graphicModel}" legendPosition="e" title="#{argentumBean.titulo}"/> 
+		<p:panel header="Buniness" footer="Stock-Exchange" rendered="#{stockExchangeBean.graphicModel != null}">
+			<p:lineChart value="#{stockExchangeBean.graphicModel}" legendPosition="e" title="#{stockExchangeBean.tittle}" zoom="true" animate="true"/> 
 			<h:form id="listBusiness">
 				<p:dataTable var="buniness" value="#{stockExchangeBean.business}" paginator="true" rows="15">
 					<p:column headerText="Price" > 
@@ -50,6 +52,7 @@
 					</p:column>
 				</p:dataTable> 
 			</h:form>
+			<p:clock mode="server" />
 		</p:panel>
 	</h:body> 
 </html>

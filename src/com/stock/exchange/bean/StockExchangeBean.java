@@ -2,7 +2,6 @@ package com.stock.exchange.bean;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -11,6 +10,7 @@ import org.primefaces.model.chart.ChartModel;
 import com.stock.exchange.graphics.GraphicsGenerator;
 import com.stock.exchange.model.Business;
 import com.stock.exchange.model.Candle;
+import com.stock.exchange.model.IndicatorFactory;
 import com.stock.exchange.model.TemporalSeries;
 import com.stock.exchange.reader.CandlesFactory;
 import com.stock.exchange.ws.ClientWebService;
@@ -56,7 +56,8 @@ public class StockExchangeBean{
 		List<Candle> candles = new CandlesFactory().buildCandles(this.business); 
 		TemporalSeries serie = new TemporalSeries(candles);
 		GraphicsGenerator generator = new GraphicsGenerator(serie, 2, serie.getTotal()-1);
-		//generator.plotIndicator();
+		IndicatorFactory indicadorFactory =	new IndicatorFactory(getIndicator(), getMedia());
+		generator.plotIndicator(indicadorFactory.getIndicador());
 		this.graphicModel = generator.getModelGraphic();
 	}
 

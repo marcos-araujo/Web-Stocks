@@ -6,7 +6,7 @@ import com.stock.exchange.indicators.Indicator;
 
 public class IndicatorFactory{
 	
-	private static final String PACKAGE = "com.stock.exchange.model.";
+	private static final String PACKAGE = "com.stock.exchange.indicators.";
 	private String indicadorName;
 	private String mediaName;
 
