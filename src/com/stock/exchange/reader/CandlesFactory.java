@@ -17,10 +17,12 @@ public class CandlesFactory{
 
 		for(Business b : business){
 			volume = volume.add(b.getVolume());
-			if(b.getPrice().compareTo(maximum) > 0)
-				maximum = b.getPrice();
-			else if(b.getPrice().compareTo(maximum) < 0)
-				minimum = b.getPrice();
+			
+			BigDecimal price = b.getPrice();
+			if(price.compareTo(maximum) > 0)
+				maximum = price;
+			else if(price.compareTo(maximum) < 0)
+				minimum = price;
 		}
 		
 		BigDecimal opening = business.isEmpty() ? new BigDecimal(0) : business.get(0).getPrice();

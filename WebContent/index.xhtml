@@ -5,9 +5,32 @@
 		<title>Stock Exchange Online</title> 
 	</h:head>
 	<h:body>
-		<p:panel header="Buniness" footer="Stock-Exchange">
-			<p:lineChart value="#{stockExchangeBean.graphicModel}" legendPosition="e" title="PETR4"/> 
-			<h:form id="listBusiness"> 
+		<p:panel header="Graphics' Data">
+			<h:form id="graphicsData">
+				<p:growl/>
+				<h:panelGrid columns="2">
+					<p:outputLabel for="tittle" value="Tittle:"/>
+					<p:inputText id="tittle" value="#{stockExchangeBean.tittle}" required="true">
+						<f:validateLength minimum="3" />
+					</p:inputText>
+					<p:outputLabel value="Indicador:" for="indicador" />
+						<p:selectOneMenu id="indicator" value="#{stockExchangeBean.indicator}">
+						<f:selectItem itemValue="OpeningIndicator" itemLabel="Opening" />
+						<f:selectItem itemValue="ShutdownIndicator" itemLabel="Shutdown" />
+					</p:selectOneMenu>
+					<p:outputLabel value="Media:" for="media" />
+						<p:selectOneMenu id="media" value="#{stockExchangeBean.media}">
+							<f:selectItem itemValue="" itemLabel="Choose" />
+							<f:selectItem itemValue="SimpleMoving" itemLabel="Simple Moving" />
+							<f:selectItem itemValue="WeightedMoving" itemLabel="Weighted Moving" />
+						</p:selectOneMenu>
+					<h:commandLink action="#{stockExchangeBean.prepareData}" value="Generate graphic" />
+				</h:panelGrid>
+			</h:form>
+		</p:panel>
+		<p:panel header="Buniness" footer="Stock-Exchange" rendered="#{argentumBean.modeloGrafico != null}">
+			<p:lineChart value="#{stockExchangeBean.graphicModel}" legendPosition="e" title="#{argentumBean.titulo}"/> 
+			<h:form id="listBusiness">
 				<p:dataTable var="buniness" value="#{stockExchangeBean.business}" paginator="true" rows="15">
 					<p:column headerText="Price" > 
 						<h:outputText value="#{buniness.price}" /> 

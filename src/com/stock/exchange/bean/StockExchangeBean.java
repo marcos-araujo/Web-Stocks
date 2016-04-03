@@ -20,22 +20,44 @@ import com.stock.exchange.ws.ClientWebService;
 public class StockExchangeBean{
 	
 	private ChartModel graphicModel;
-
 	private List<Business> business;
+	private String tittle;
+	private String indicator;
+	private String media;
 	
+	public String getIndicator(){
+		return indicator;
+	}
+	public void setIndicator(String indicator){
+		this.indicator = indicator;
+	}
+
+	public String getMedia(){
+		return media;
+	}
+	public void setMedia(String media){
+		this.media = media;
+	}
+
+	public void setTittle(String tittle){
+		this.tittle = tittle;
+	}
+	public String getTittle(){
+		return tittle;
+	}
+
 	public ChartModel getGraphicModel(){
 		return graphicModel;
 	}
 
-	@PostConstruct 
 	public void prepareData(){ 
 		ClientWebService client = new ClientWebService(); 
 		this.business = client.getBusiness(); 
 		List<Candle> candles = new CandlesFactory().buildCandles(this.business); 
 		TemporalSeries serie = new TemporalSeries(candles);
 		GraphicsGenerator generator = new GraphicsGenerator(serie, 2, serie.getTotal()-1);
-		generator.plotIndicator(ind);
-		this.graphicModel = generator.getModeloGrafico()
+		//generator.plotIndicator();
+		this.graphicModel = generator.getModelGraphic();
 	}
 
 	public List<Business> getBusiness(){ 
