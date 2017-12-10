@@ -22,7 +22,7 @@ public class GraphicsGenerator{
 	}
 
 	public void plotIndicator(Indicator ind){
-		LineChartSeries chartSerie = new LineChartSeries("MMS - Fechamento");
+		LineChartSeries chartSerie = new LineChartSeries(ind.toString());
 		for(int i = begin; i <= end; i++){
 			double value = ind.calculate(i, series);
 			chartSerie.set(i, value);

@@ -1,9 +1,7 @@
 package com.stock.exchange.reader;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -15,7 +13,7 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class XMLRandomGenerator{
 	
-	public static void main(String[] args) throws IOException{
+	public List<Business> getBusiness(){
 		Calendar date = Calendar.getInstance();
 		Random random = new Random(123);
 		List<Business> businessList = new ArrayList<Business>();
@@ -28,7 +26,7 @@ public class XMLRandomGenerator{
 				if(value < 5.0)
 					value = 5.0;
 				amount += 1000 - random.nextInt(500);
-				Business n = new Business(new BigDecimal(value), amount, date);
+				Business n = new Business(new BigDecimal(value).setScale(2, RoundingMode.CEILING), amount, date);
 				businessList.add(n);
 			}
 			date = (Calendar) date.clone();
@@ -37,8 +35,7 @@ public class XMLRandomGenerator{
 		XStream stream = new XStream(new DomDriver());
 		stream.alias("business", Business.class);
 		stream.setMode(XStream.NO_REFERENCES);
-		PrintStream out = new PrintStream(new File("business.xml"));
-		out.println(stream.toXML(businessList));
+		return businessList;
 	}
 
 }

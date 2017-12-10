@@ -13,7 +13,7 @@ import com.stock.exchange.model.Candle;
 import com.stock.exchange.model.IndicatorFactory;
 import com.stock.exchange.model.TemporalSeries;
 import com.stock.exchange.reader.CandlesFactory;
-import com.stock.exchange.ws.ClientWebService;
+import com.stock.exchange.reader.XMLRandomGenerator;
 
 @ManagedBean 
 @SessionScoped
@@ -21,7 +21,7 @@ public class StockExchangeBean{
 	
 	private ChartModel graphicModel;
 	private List<Business> business;
-	private String tittle;
+	private String title;
 	private String indicator;
 	private String media;
 	
@@ -39,11 +39,11 @@ public class StockExchangeBean{
 		this.media = media;
 	}
 
-	public void setTittle(String tittle){
-		this.tittle = tittle;
+	public void setTitle(String title){
+		this.title = title;
 	}
-	public String getTittle(){
-		return tittle;
+	public String getTitle(){
+		return title;
 	}
 
 	public ChartModel getGraphicModel(){
@@ -51,8 +51,8 @@ public class StockExchangeBean{
 	}
 
 	public void prepareData(){ 
-		ClientWebService client = new ClientWebService(); 
-		this.business = client.getBusiness(); 
+		//ClientWebService client = new ClientWebService(); 
+		this.business = new XMLRandomGenerator().getBusiness(); 
 		List<Candle> candles = new CandlesFactory().buildCandles(this.business); 
 		TemporalSeries serie = new TemporalSeries(candles);
 		GraphicsGenerator generator = new GraphicsGenerator(serie, 2, serie.getTotal()-1);
