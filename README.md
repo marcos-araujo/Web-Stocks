@@ -1,11 +1,6 @@
-<h1>Stock Exchange Online</h1> 
+# Web Stocks market 
 
-<h4>Features</h4>
 
-<h4>Design Patterns</h4>
-
-<h4>Concepts</h4> 
-
-<h4>References</h4>
-
-URL: <a href="http://localhost/stock">http://localhost/stock</a>
+Stocks market charts based on several indicators and averages.
+<br /><br />
+Training project for JSF
