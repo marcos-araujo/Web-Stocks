@@ -1,19 +1,18 @@
 <?xml version='1.0' encoding='ISO-8859-1' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" 
-		xmlns:f="http://java.sun.com/jsf/core" 
-		xmlns:h="http://java.sun.com/jsf/html" 
-		xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
 	<h:head> 
 		<title>Web Stocks</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
 		<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/images/favicon.ico"/> 
+		<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/images/favicon.ico"/>
+		<link rel="stylesheet" href="#{request.contextPath}/resources/css/webStockExchange.css" />
 	</h:head>
 	<h:body style="margin:0">
-		<div id="header" class="ui-widget-header" style="font-size:40px;text-align: center;font-family: Arial;line-height: 80px;margin-bottom: 10px;">
+		<div id="header" class="ui-widget-header">
 			Web Stocks
 		</div>
-		<p:panel header="Graphic's Data" style="margin: 10px;">
+		<p:panel header="Graphic's Data" style="margin: 5px;">
 			<h:form id="graphicsData" acceptcharset="ISO-8859-1">
 				<p:growl/>
 				<h:panelGrid columns="2">
@@ -36,7 +35,7 @@
 				</h:panelGrid>
 			</h:form>
 		</p:panel>
-		<p:panel header="Buniness" rendered="#{stockExchangeBean.graphicModel != null}" style="margin: 10px;">
+		<p:panel header="Buniness" rendered="#{stockExchangeBean.graphicModel != null}" style="margin: 5px;">
 			<p:lineChart value="#{stockExchangeBean.graphicModel}" legendPosition="e" title="#{stockExchangeBean.title}" zoom="true" animate="true"/> 
 			<br />
 			<h:form id="listBusiness">
@@ -62,8 +61,8 @@
 			<br />
 			<p:clock mode="server" />
 		</p:panel>
-		<div id="footer" style="float: right; padding: 0 10px 10px 0">
-			<a style="text-decoration: underline !important; color: black; " class="about" href="about.xhtml">About</a>
+		<div id="footer">
+			<a href="about.xhtml" class="about">About</a>
 		</div>
 	</h:body>
 </html>

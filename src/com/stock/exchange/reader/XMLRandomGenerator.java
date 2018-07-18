@@ -16,7 +16,7 @@ public class XMLRandomGenerator{
 	public List<Business> getBusiness(){
 		Calendar date = Calendar.getInstance();
 		Random random = new Random(123);
-		List<Business> businessList = new ArrayList<Business>();
+		List<Business> businessList = new ArrayList<>();
 		double value = 40;
 		int amount = 1000;
 		for(int days = 0; days < 30; days++){
@@ -26,7 +26,7 @@ public class XMLRandomGenerator{
 				if(value < 5.0)
 					value = 5.0;
 				amount += 1000 - random.nextInt(500);
-				Business n = new Business(new BigDecimal(value).setScale(2, RoundingMode.CEILING), amount, date);
+				Business n = new Business(BigDecimal.valueOf(value).setScale(2, RoundingMode.CEILING), amount, date);
 				businessList.add(n);
 			}
 			date = (Calendar) date.clone();

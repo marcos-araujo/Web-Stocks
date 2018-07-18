@@ -1,26 +1,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" 
-		xmlns:f="http://java.sun.com/jsf/core" 
-		xmlns:h="http://java.sun.com/jsf/html" 
-		xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
 	<h:head> 
 		<title>Web Stocks</title> 
 		<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/images/favicon.ico"/>
+		<link rel="stylesheet" href="#{request.contextPath}/resources/css/webStockExchange.css" />
 	</h:head>
 	<h:body style="margin:0">
-		<div id="header" class="ui-widget-header" style="font-size:40px;text-align: center;font-family: Arial;line-height: 80px;margin-bottom: 10px;">
+		<div id="header" class="ui-widget-header">
 			Web Stocks
 		</div>
-		<div class="container" style="margin: 10px;">
+		<div class="container" style="margin: 5px;">
+			<div id="about">
+
+				<div class="about">Stock market charts based on several indicators and averages.</div>
+					
+				<div class="about">Design Patterns</div>
+				<ul> 
+					<li></li>
+				</ul>
+					
+				<div class="about">APIs and Frameworks</div>	
+				<ul>	
+					<li></li>
+				</ul>
+				
+				<div class="about">Logic overview</div>
+				<ul>
+					<li></li>
+				</ul>
+				
+				<div class="about">Free Software <a target="_blank" href="https://github.com/marcos-morgado/Web-Stocks">Code</a>. Feel free to contribute.</div>
+
+			</div>					
 			
-			<br /> 
-			Stock market charts based on several indicators and averages.
-			<br /><br />
-			Training project for JSF
-			<br /><br />
-			Free Software <a target="_blank" href="https://github.com/Marcos-Maraujo/Web-Stocks">Code</a>. Feel free to contribute.
-			
-			<br /><br />
+			<br />
 			
 			<a href="index.xhtml"><input type="button" value="Back" class="button"/></a>
 		</div>

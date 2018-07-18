@@ -22,7 +22,6 @@ public class ClientWebService{
 			connection = (HttpURLConnection)url.openConnection();
 			content = connection.getInputStream();
 		}catch(IOException e){
-			e.printStackTrace();
 		}
 		return new ReaderXML().load(content);
 	}

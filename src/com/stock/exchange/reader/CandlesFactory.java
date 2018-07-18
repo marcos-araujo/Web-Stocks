@@ -32,8 +32,8 @@ public class CandlesFactory{
 	}
 
 	public List<Candle> buildCandles(List<Business> allBusiness){
-		List<Candle> candles = new ArrayList<Candle>();
-		List<Business> businessOfDay = new ArrayList<Business>();
+		List<Candle> candles = new ArrayList<>();
+		List<Business> businessOfDay = new ArrayList<>();
 		Calendar atualDate = allBusiness.get(0).getDate();
 
 		for(Business business : allBusiness){
@@ -41,7 +41,7 @@ public class CandlesFactory{
 				throw new IllegalStateException("Wrong bussiness order.");
 			if(!business.isSameDay(atualDate)){
 				buildAndStoreCandle(candles, businessOfDay, atualDate);
-				businessOfDay = new ArrayList<Business>();
+				businessOfDay = new ArrayList<>();
 				atualDate = business.getDate();
 			}
 			businessOfDay.add(business);
