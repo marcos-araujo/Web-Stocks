@@ -4,15 +4,5 @@
 	
 <div class="about">Design Patterns</div>
 <ul> 
-	<li></li>
-</ul>
-	
-<div class="about">APIs and Frameworks</div>	
-<ul>	
-	<li></li>
-</ul>
-
-<div class="about">Logic overview</div>
-<ul>
-	<li></li>
+	<li>PrimeFaces 3.5</li>
 </ul>
