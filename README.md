@@ -1,13 +1,15 @@
-# Web Stocks market 
+# Web Stocks market
+> Stock market charts based on several indicators and averages.
 
-<div class="about">Stock market charts based on several indicators and averages.</div>
+## General info
+Project created for the purpose of studying the some java technologies.
 
-<br />
+## Technologies
 
-<div class="about">Design Patterns</div>
-
-<br />
-
-<ul> 
+Project created  with:
+<ul>	
 	<li>PrimeFaces 3.5</li>
 </ul>
+
+## Contact
+Created by [@marcos-araujo](http://marcosmorgado.com/) - feel free to contact me!
