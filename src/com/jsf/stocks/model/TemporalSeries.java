@@ -1,4 +1,4 @@
-package com.stock.exchange.model;
+package com.jsf.stocks.model;
 
 import java.util.List;
 

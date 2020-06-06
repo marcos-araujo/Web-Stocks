@@ -1,4 +1,4 @@
-package com.stock.exchange.model;
+package com.jsf.stocks.model;
 
 import java.math.BigDecimal;
 import java.util.Calendar;

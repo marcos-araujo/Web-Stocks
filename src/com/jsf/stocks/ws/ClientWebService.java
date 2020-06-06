@@ -1,4 +1,4 @@
-package com.stock.exchange.ws;
+package com.jsf.stocks.ws;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,8 +6,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-import com.stock.exchange.model.Business;
-import com.stock.exchange.reader.ReaderXML;
+import com.jsf.stocks.model.Business;
+import com.jsf.stocks.reader.ReaderXML;
 
 public class ClientWebService{
 	

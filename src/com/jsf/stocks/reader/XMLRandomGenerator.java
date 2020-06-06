@@ -1,4 +1,4 @@
-package com.stock.exchange.reader;
+package com.jsf.stocks.reader;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -7,7 +7,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
-import com.stock.exchange.model.Business;
+import com.jsf.stocks.model.Business;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 

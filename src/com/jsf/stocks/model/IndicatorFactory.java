@@ -1,12 +1,12 @@
-package com.stock.exchange.model;
+package com.jsf.stocks.model;
 
 import java.lang.reflect.Constructor;
 
-import com.stock.exchange.indicators.Indicator;
+import com.jsf.stocks.indicators.Indicator;
 
 public class IndicatorFactory{
 	
-	private static final String PACKAGE = "com.stock.exchange.indicators.";
+	private static final String PACKAGE = "com.jsf.stocks.indicators.";
 	private String indicadorName;
 	private String mediaName;
 

@@ -1,12 +1,12 @@
-package com.stock.exchange.reader;
+package com.jsf.stocks.reader;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import com.stock.exchange.model.Candle;
-import com.stock.exchange.model.Business;
+import com.jsf.stocks.model.Business;
+import com.jsf.stocks.model.Candle;
 
 public class CandlesFactory{
 	

@@ -1,11 +1,11 @@
-package com.stock.exchange.graphics;
+package com.jsf.stocks.graphics;
 
 import org.primefaces.model.chart.CartesianChartModel;
 import org.primefaces.model.chart.ChartModel;
 import org.primefaces.model.chart.LineChartSeries;
 
-import com.stock.exchange.indicators.Indicator;
-import com.stock.exchange.model.TemporalSeries;
+import com.jsf.stocks.indicators.Indicator;
+import com.jsf.stocks.model.TemporalSeries;
 
 public class GraphicsGenerator{
 	

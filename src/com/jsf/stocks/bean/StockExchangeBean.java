@@ -1,4 +1,4 @@
-package com.stock.exchange.bean;
+package com.jsf.stocks.bean;
 
 import java.util.List;
 
@@ -7,13 +7,13 @@ import javax.faces.bean.SessionScoped;
 
 import org.primefaces.model.chart.ChartModel;
 
-import com.stock.exchange.graphics.GraphicsGenerator;
-import com.stock.exchange.model.Business;
-import com.stock.exchange.model.Candle;
-import com.stock.exchange.model.IndicatorFactory;
-import com.stock.exchange.model.TemporalSeries;
-import com.stock.exchange.reader.CandlesFactory;
-import com.stock.exchange.reader.XMLRandomGenerator;
+import com.jsf.stocks.graphics.GraphicsGenerator;
+import com.jsf.stocks.model.Business;
+import com.jsf.stocks.model.Candle;
+import com.jsf.stocks.model.IndicatorFactory;
+import com.jsf.stocks.model.TemporalSeries;
+import com.jsf.stocks.reader.CandlesFactory;
+import com.jsf.stocks.reader.XMLRandomGenerator;
 
 @ManagedBean 
 @SessionScoped

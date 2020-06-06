@@ -1,6 +1,6 @@
-package com.stock.exchange.indicators;
+package com.jsf.stocks.indicators;
 
-import com.stock.exchange.model.TemporalSeries;
+import com.jsf.stocks.model.TemporalSeries;
 
 public class SimpleMovingAverage implements Indicator{
 	

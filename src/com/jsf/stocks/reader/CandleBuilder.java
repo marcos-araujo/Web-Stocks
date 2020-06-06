@@ -1,9 +1,9 @@
-package com.stock.exchange.reader;
+package com.jsf.stocks.reader;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
 
-import com.stock.exchange.model.Candle;
+import com.jsf.stocks.model.Candle;
 
 public class CandleBuilder{
 	
