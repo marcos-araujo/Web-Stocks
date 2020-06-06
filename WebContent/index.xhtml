@@ -2,44 +2,42 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
 	<h:head> 
-		<title>Web Stocks</title>
+		<title>JSF Stocks</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
 		<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/images/favicon.ico"/> 
 		<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/images/favicon.ico"/>
-		<link rel="stylesheet" href="#{request.contextPath}/resources/css/webStockExchange.css" />
+		<link rel="stylesheet" href="#{request.contextPath}/resources/css/StocksExchange.css" />
 	</h:head>
 	<h:body style="margin:0">
-		<div id="header" class="ui-widget-header">
-			Web Stocks
-		</div>
+		<div id="header" class="ui-widget-header">JSF Stocks</div>
 		<p:panel header="Graphic's Data" style="margin: 5px;">
 			<h:form id="graphicsData" acceptcharset="ISO-8859-1">
 				<p:growl/>
 				<h:panelGrid columns="2">
 					<p:outputLabel for="title" value="Title"/>
-					<p:inputText id="title" value="#{stockExchangeBean.title}" required="true" maxlength="20"> 
+					<p:inputText id="title" value="#{stocksExchangeBean.title}" required="true" maxlength="20"> 
 						<f:validateLength minimum="3" />
 					</p:inputText>
 					<p:outputLabel value="Indicator" for="indicator" />
-					<p:selectOneMenu id="indicator" value="#{stockExchangeBean.indicator}">
+					<p:selectOneMenu id="indicator" value="#{stocksExchangeBean.indicator}">
 						<f:selectItem itemValue="OpeningIndicator" itemLabel="Opening" />
 						<f:selectItem itemValue="ShutdownIndicator" itemLabel="Shutdown" />
 					</p:selectOneMenu>
 					<p:outputLabel value="Media" for="media" />
-					<p:selectOneMenu id="media" value="#{stockExchangeBean.media}">
+					<p:selectOneMenu id="media" value="#{stocksExchangeBean.media}">
 						<f:selectItem itemValue="" itemLabel="Choose" />
 						<f:selectItem itemValue="SimpleMovingAverage" itemLabel="Simple Moving" />
 						<f:selectItem itemValue="WeightedMovingAverage" itemLabel="Weighted Moving" />
 					</p:selectOneMenu>
-					<h:commandButton action="#{stockExchangeBean.prepareData}" value="Generate chart" />
+					<h:commandButton action="#{stocksExchangeBean.prepareData}" value="Generate chart" />
 				</h:panelGrid>
 			</h:form>
 		</p:panel>
-		<p:panel header="Buniness" rendered="#{stockExchangeBean.graphicModel != null}" style="margin: 5px;">
-			<p:lineChart value="#{stockExchangeBean.graphicModel}" legendPosition="e" title="#{stockExchangeBean.title}" zoom="true" animate="true"/> 
+		<p:panel header="Buniness" rendered="#{stocksExchangeBean.graphicModel != null}" style="margin: 5px;">
+			<p:lineChart value="#{stocksExchangeBean.graphicModel}" legendPosition="e" title="#{stocksExchangeBean.title}" zoom="true" animate="true"/> 
 			<br />
 			<h:form id="listBusiness">
-				<p:dataTable var="buniness" value="#{stockExchangeBean.business}" paginator="true" rows="10" paginatorPosition="bottom">
+				<p:dataTable var="buniness" value="#{stocksExchangeBean.business}" paginator="true" rows="10" paginatorPosition="bottom">
 					<p:column headerText="Price" > 
 						<h:outputText value="$ #{buniness.price}" /> 
 					</p:column>
@@ -58,8 +56,6 @@
 					</p:column>
 				</p:dataTable> 
 			</h:form>
-			<br />
-			<p:clock mode="server" />
 		</p:panel>
 		<div id="footer">
 			<a href="about.xhtml" class="about">About</a>
