@@ -5,7 +5,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
-		<finalName>WebStocks</finalName>
+		<finalName>JSF-Stocks</finalName>
 	  	<sourceDirectory>src</sourceDirectory>
 	  	<plugins>
 		    <plugin>
