@@ -17,7 +17,7 @@ import com.jsf.stocks.reader.XMLRandomGenerator;
 
 @ManagedBean 
 @SessionScoped
-public class StockExchangeBean{
+public class StocksExchangeBean{
 	
 	private ChartModel graphicModel;
 	private List<Business> business;
