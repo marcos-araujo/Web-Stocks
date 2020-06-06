@@ -27,7 +27,7 @@ a:link, a:visited, a:hover, a:active{
 
 input, textarea{
 	padding: 2px 3px; 
-}
+}index
 
 .lightYellow{
 	background-color: #faf9e7; 
@@ -65,7 +65,10 @@ a.about:link, a.about:visited, a.about:hover{
 
 .about{
 	margin: 15px 0 0 5px;
-	font-weight: bold;
+}
+
+.padding {
+	padding-bottom: 15px;
 }
 
 #about{
@@ -74,4 +77,8 @@ a.about:link, a.about:visited, a.about:hover{
 
 ul{
 	margin: 0;
+}
+
+.bold {
+	font-weight: bold;
 }
